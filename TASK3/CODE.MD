@@ -1,4 +1,4 @@
-# 3. Hospital Billing and Patient Classification Using Python
+#  Hospital Billing and Patient Classification Using Python
 
 ## 1. Problem Statement
 
