@@ -31,8 +31,16 @@ The system performs the following operations:
 9. Display the formatted salary statement.
 10. Stop the program.
 
-## 3. Flowchart (Mermaid)
-
+## 3. Flowchart 
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Enter employee salary details/]
+    B --> C[Calculate gross salary]
+    C --> D[Apply progressive deductions]
+    D --> E[Calculate net salary]
+    E --> F[/Display salary statement/]
+    F --> G([Stop])
+```
 ## 5.Sample Input
 
 Enter employee name: Harini
