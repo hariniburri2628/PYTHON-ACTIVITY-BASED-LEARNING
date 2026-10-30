@@ -1,4 +1,4 @@
-# 7. Retail Billing with Multiple Discount Rules Using Python
+#  Retail Billing with Multiple Discount Rules Using Python
 
 ## 1. Problem Statement
 
