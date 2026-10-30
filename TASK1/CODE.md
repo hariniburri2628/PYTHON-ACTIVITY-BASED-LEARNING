@@ -52,7 +52,8 @@ Step 9: If no students are eligible, display an appropriate message.
 
 Step 10: Stop the program.
 ## 3.flowchart
-``` mermaid
+```mermaid
+    
 flowchart TD
     A([Start]) --> B[/Enter number of students/]
     B --> C[/Enter student details/]
