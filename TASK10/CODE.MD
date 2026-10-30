@@ -1,4 +1,4 @@
-# 12. Attendance Recovery Computation Using Python
+# Attendance Recovery Computation Using Python
 
 ## 1. Problem Statement
 
