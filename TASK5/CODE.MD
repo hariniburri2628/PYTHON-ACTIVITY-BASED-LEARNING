@@ -1,4 +1,4 @@
-# 5. Multi-Plan Telecommunications Cost Optimization Using Python
+#  Multi-Plan Telecommunications Cost Optimization Using Python
 
 ## 1. Problem Statement
 
