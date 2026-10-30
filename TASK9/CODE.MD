@@ -1,4 +1,4 @@
-# 9. Multi-Currency Travel Budget Analysis Using Python
+# Multi-Currency Travel Budget Analysis Using Python
 
 ## 1. Problem Statement
 
