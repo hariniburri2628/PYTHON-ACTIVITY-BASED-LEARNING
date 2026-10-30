@@ -1,9 +1,6 @@
 
-# University Scholarship Allocation System
 
 eligible_students = []
-
-# Eligibility Criteria
 MIN_AGGREGATE = 75
 MIN_SUBJECT_MARKS = 50
 MIN_ATTENDANCE = 75
