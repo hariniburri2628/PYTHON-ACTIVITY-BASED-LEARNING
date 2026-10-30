@@ -51,18 +51,34 @@ Step 8: Display the ranked list of eligible students.
 Step 9: If no students are eligible, display an appropriate message.
 
 Step 10: Stop the program.
-
-
-
-## 4. Source Code (Python)
-
+## 3.flowchart
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Enter number of students/]
+    B --> C[/Enter student details/]
+    C --> D[Read aggregate marks, subject marks, attendance and income]
+    D --> E{Aggregate marks >= 75?}
+    E -- No --> I[Student Not Eligible]
+    E -- Yes --> F{Every subject mark >= 50?}
+    F -- No --> I
+    F -- Yes --> G{Attendance >= 75?}
+    G -- No --> I
+    G -- Yes --> H{Income <= 250000?}
+    H -- No --> I
+    H -- Yes --> J[Add student to eligible list]
+    I --> K{More students?}
+    J --> K
+    K -- Yes --> C
+    K -- No --> L[Sort eligible students]
+    L --> M[Rank by marks, attendance, income and name]
+    M --> N[/Display scholarship ranking/]
+    N --> O([Stop])
 ```
-    for j in range(subjects):        mark = float(input(f"Enter marks in subject {j+1}: "))        subject_marks.append(mark)    attendance = float(input("Enter attendance percentage: "))    income = float(input("Enter annual family income: "))    # Checking Eligibility    if (aggregate >= MIN_AGGREGATE and        all(mark >= MIN_SUBJECT_MARKS for mark in subject_marks) and        attendance >= MIN_ATTENDANCE and        income <= MAX_INCOME):        print(name, "is Eligible for Scholarship")        eligible_students.append({            "name": name,            "aggregate": aggregate,            "attendance": attendance,            "income": income        })    else:        print(name, "is Not Eligible for Scholarship")# Ranking Eligible Studentseligible_students.sort(    key=lambda x: (        -x["aggregate"],        -x["attendance"],        x["income"],        x["name"].lower()    ))# Display Final Rankingprint("\n===== SCHOLARSHIP ALLOCATION RESULTS =====")if len(eligible_students) == 0:    print("No students are eligible for scholarship.")else:    print("\nRank  Name       Aggregate  Attendance  Income")    for rank, student in enumerate(eligible_students, start=1):        print(            rank,            student["name"],            student["aggregate"],            student["attendance"],            student["income"]        )print("\nScholarship allocation process completed.")
-```
+
+
 
 ## 5. Sample Input
 
-```
 Enter number of students: 4
 
 Enter details of Student 1
@@ -104,11 +120,10 @@ Enter marks in subject 2: 80
 Enter marks in subject 3: 70
 Enter attendance percentage: 85
 Enter annual family income: 150000
-```
+
 
 ## 6. Sample Output
 
-```
 Harini is Eligible for Scholarship
 
 Priya is Eligible for Scholarship
@@ -125,23 +140,5 @@ Rank  Name       Aggregate  Attendance  Income
 2     Harini     90.0       95.0        200000.0
 3     Priya      85.0       90.0        180000.0
 
-Scholarship allocation process completed.
-```
-
-## 7. Explanation of the Output
-
-- Rahul: Eligible because he satisfies all the eligibility conditions. He gets Rank 1 because he has 90% aggregate marks and higher attendance than Harini.
-- Harini: Eligible because she satisfies all the conditions. She gets Rank 2 because her attendance is lower than Rahul's.
-- Priya: Eligible because she satisfies all the conditions. She gets Rank 3 because her aggregate marks are 85%.
-- Sneha: Not eligible because her aggregate marks are below the required 75%.
-
-Tie-breaking example: Rahul and Harini both scored 90% aggregate marks. Rahul receives the higher rank because his attendance is 98%, compared with Harini's 95%.
-
-## 8. Conclusion
-
-The University Scholarship Allocation System provides an efficient and systematic method for selecting eligible students for scholarships. It evaluates students based on academic performance, subject-wise marks, attendance, and family income. It also ranks eligible students fairly using predefined tie-breaking rules.
-
-By automating the scholarship allocation process using Python, the system reduces manual effort, saves time, minimizes errors, and ensures transparency in scholarship selection.
-
-Note: The eligibility thresholds used here (75% aggregate, 50% in each subject, 75% attendance, and ₹2,50,000 maximum annual family income) are sample rules. They can be modified according to the university's actual scholarship policy.
+Scholarship allocation process completed
 
