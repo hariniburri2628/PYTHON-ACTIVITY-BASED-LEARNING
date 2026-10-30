@@ -26,7 +26,23 @@ The system accepts electricity consumption details for several months, calculate
 13. Stop the program.
 
 ## 3. Flowchart
-
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Enter number of months and units/]
+    B --> C[Calculate slab charges]
+    C --> D[Add fixed charges and surcharge]
+    D --> E[Apply rebate and calculate bill]
+    E --> F[Store monthly bill]
+    F --> G{More months?}
+    G -- Yes --> B
+    G -- No --> H[Compare monthly bills]
+    H --> I{Increase greater than 30%?}
+    I -- Yes --> J[Display unusual increase]
+    I -- No --> K[Display normal bill]
+    J --> L[/Display final results/]
+    K --> L
+    L --> M([Stop])
+```
 
 ## 5. Sample Input
 
