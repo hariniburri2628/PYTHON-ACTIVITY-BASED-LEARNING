@@ -1,4 +1,4 @@
-# 6. Railway Fare and Reservation Calculator Using Python
+#  Railway Fare and Reservation Calculator Using Python
 
 ## 1. Problem Statement
 
