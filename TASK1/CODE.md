@@ -55,26 +55,19 @@ Step 10: Stop the program.
 ```mermaid
     
 flowchart TD
-    A([Start]) --> B[/Enter number of students/]
-    B --> C[/Enter student details/]
-    C --> D[Read aggregate marks, subject marks, attendance and income]
-    D --> E{Aggregate marks >= 75?}
-    E -- No --> I[Student Not Eligible]
-    E -- Yes --> F{Every subject mark >= 50?}
-    F -- No --> I
-    F -- Yes --> G{Attendance >= 75?}
-    G -- No --> I
-    G -- Yes --> H{Income <= 250000?}
-    H -- No --> I
-    H -- Yes --> J[Add student to eligible list]
-    I --> K{More students?}
-    J --> K
-    K -- Yes --> C
-    K -- No --> L[Sort eligible students]
-    L --> M[Rank by marks, attendance, income and name]
-    M --> N[/Display scholarship ranking/]
-    N --> O([Stop])
+    A([Start]) --> B[/Enter student details/]
+    B --> C{Check eligibility criteria}
+    C -- Not Eligible --> D[Display Not Eligible]
+    C -- Eligible --> E[Add to Eligible List]
+    D --> F{More students?}
+    E --> F
+    F -- Yes --> B
+    F -- No --> G[Rank eligible students]
+    G --> H[/Display final ranking/]
+    H --> I([Stop])
 ```
+
+    
 
 ## 5. Sample Input
 
