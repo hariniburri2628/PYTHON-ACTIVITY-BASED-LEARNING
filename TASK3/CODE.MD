@@ -37,25 +37,15 @@ The system performs the following operations:
 
 ## 3. Flowchart 
 ```mermaid
+
 flowchart TD
     A([Start]) --> B[/Enter patient details and charges/]
-    B --> C{Charges valid?}
-    C -- No --> D[Display Invalid Charges]
-    D --> B
-    C -- Yes --> E[Calculate Total Bill]
-    E --> F[Apply Conditional Concession]
-    F --> G[Calculate Final Bill]
-    G --> H[/Enter Payment Amount/]
-    H --> I{Payment valid?}
-    I -- No --> H
-    I -- Yes --> J{Classify Payment}
-    J --> K[Fully Paid]
-    J --> L[Partially Paid]
-    J --> M[Unpaid]
-    K --> N[/Display Final Bill and Status/]
-    L --> N
-    M --> N
-    N --> O([Stop])
+    B --> C[Calculate total bill and apply concession]
+    C --> D[Validate payment amount]
+    D --> E[Classify patient payment status]
+    E --> F[/Display final bill and payment status/]
+    F --> G([Stop])
+
 ```
 ## 5.Sample Input
 Enter patient name: Harini
